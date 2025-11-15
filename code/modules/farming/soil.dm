@@ -304,15 +304,12 @@
 
 /obj/structure/soil/proc/adjust_water(adjust_amount)
 	water = clamp(water + adjust_amount, 0, MAX_PLANT_WATER)
-	update_icon()
 
 /obj/structure/soil/proc/adjust_nutrition(adjust_amount)
 	nutrition = clamp(nutrition + adjust_amount, 0, MAX_PLANT_NUTRITION)
-	update_icon()
 
 /obj/structure/soil/proc/adjust_weeds(adjust_amount)
 	weeds = clamp(weeds + adjust_amount, 0, MAX_PLANT_WEEDS)
-	update_icon()
 
 /obj/structure/soil/proc/adjust_plant_health(adjust_amount)
 	if(!plant || plant_dead)
@@ -321,7 +318,7 @@
 	if(plant_health <= 0)
 		plant_dead = TRUE
 		produce_ready = FALSE
-	update_icon()
+		update_icon()
 
 /obj/structure/soil/Initialize()
 	START_PROCESSING(SSprocessing, src)
